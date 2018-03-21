@@ -4,34 +4,53 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+       <item android:title="Opérations Lifouta">
+            <menu>
+                <item
+                    android:id="@+id/nav_virement"
+                    android:icon="@drawable/virement"
+                    android:title="Virement" />
+                <item
+                    android:id="@+id/transfer"
+                    android:icon="@drawable/transfer"
+                    android:title="transfer" />
+                <item
+                    android:id="@+id/nav_bouquets"
+                    android:icon="@drawable/tv"
+                    android:title="Bouquets" />
+                <item
+                    android:id="@+id/nav_credits"
+                    android:icon="@drawable/media"
+                    android:title="Crédits téléphones" />
+            </menu>
+       </item>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Services publics">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_sne"
+                android:icon="@drawable/sne"
+                android:title="Factures SNE" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_snde"
+                android:icon="@drawable/snde"
+                android:title="Factures SNDE" />
+            <item
+                android:id="@+id/nav_mairie"
+                android:title="Taxes municipales"
+                android:icon="@drawable/mairie"/>
+        </menu>
+    </item>
+
+    <item android:title="Supplémentaire">
+        <menu>
+            <item
+                android:id="@+id/nav_pay"
+                android:title="Payer"
+                android:icon="@drawable/pay">
+
+            </item>
         </menu>
     </item>
 
