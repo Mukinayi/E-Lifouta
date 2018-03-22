@@ -5,4 +5,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="loginlabel">Connexion Lifouta</string>
+    <string name="numcompte">Numéro du compte</string>
+    <string name="lifpin">PIN du compte</string>
+    <string name="labelConnexion">Connexion</string>
+    <string name="noimei">Dispositif sans IMEI</string>
+    <string name="impossible">Impossible de se connecter</string>
+    <string name="confirmlabel">Confirmation de la connexion</string>
+    <string name="labelotpcode">Code OTP</string>
+    <string name="labelValider">Valider</string>
+    <string name="nosms">SMS non reçu? cliquer pour renvoyer</string>
 </resources>

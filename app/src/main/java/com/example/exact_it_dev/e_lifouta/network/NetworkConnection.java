@@ -1,10 +1,15 @@
 package com.example.exact_it_dev.e_lifouta.network;
 
+import android.Manifest;
 import android.app.Service;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
+import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 import java.net.URL;
@@ -38,7 +43,7 @@ public class NetworkConnection {
     }
 
 
-    public boolean saveProfile(String devicestate,String numcompe, String phone,String typecompe, String fname, String lname, String adresse,String currency){
+    public boolean saveProfile(String devicestate,String numcompe, String phone,String typecompe, String fname, String lname, String adresse,String currency,String idcompte){
         try {
             storage = context.getSharedPreferences(LIFOUTA_MEMORY,Context.MODE_PRIVATE).edit();
             storage.putString("numcompte",numcompe);
@@ -49,6 +54,7 @@ public class NetworkConnection {
             storage.putString("lname",lname);
             storage.putString("adresse",adresse);
             storage.putString("devicestate",devicestate);
+            storage.putString("idcompte",idcompte);
             storage.commit();
             return true;
         }catch (Exception e){
@@ -76,8 +82,33 @@ public class NetworkConnection {
 
     public String getUrl(){
         sharedPreferences = context.getSharedPreferences(LIFOUTA_MEMORY,Context.MODE_PRIVATE);
-        String URL = sharedPreferences.getString("URL","https://www.lifouta.com");
+        String URL = sharedPreferences.getString("URL","https://www.lifouta.com/");
         return URL;
+    }
+
+    public String getImeiNumber(){
+        String imei = "";
+        TelephonyManager tm = (TelephonyManager)context.getSystemService(Service.TELEPHONY_SERVICE);
+        if(tm!=null){
+            if(ActivityCompat.checkSelfPermission(context,Manifest.permission.READ_PHONE_STATE)!= PackageManager.PERMISSION_GRANTED) {
+                imei = null;
+            }else{
+                imei = tm.getDeviceId();
+            }
+        }
+        return imei;
+    }
+    public String getDeviceName(){
+        String devicename = "";
+        TelephonyManager tm = (TelephonyManager)context.getSystemService(Service.TELEPHONY_SERVICE);
+        if(tm!=null){
+            if(ActivityCompat.checkSelfPermission(context,Manifest.permission.READ_PHONE_STATE)!=PackageManager.PERMISSION_GRANTED){
+                devicename = null;
+            }else{
+                devicename = Build.MODEL;
+            }
+        }
+        return devicename;
     }
 
 }
