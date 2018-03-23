@@ -73,6 +73,7 @@ public class Login extends AppCompatActivity {
                                             Intent conf = new Intent(Login.this,ConfirmationConnexion.class);
                                             conf.putExtra("numcompte",etLoginNumcompte.getText().toString());
                                             startActivity(conf);
+                                            finish();
                                             break;
                                     }
                                 }

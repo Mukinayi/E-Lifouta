@@ -2,6 +2,7 @@ package com.example.exact_it_dev.e_lifouta.login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -88,11 +89,11 @@ public class ConfirmationConnexion extends AppCompatActivity {
                                                 JSONArray jsonArray = new JSONArray(s);
                                                 JSONObject jsonObject = jsonArray.getJSONObject(0);
                                                 if(networkConnection.saveProfile(jsonObject.getString("devicestate"),jsonObject.getString("numcompte"),jsonObject.getString("portablecli"),jsonObject.getString("typeaccount"),jsonObject.getString("prenomcli"),jsonObject.getString("nomcli"),jsonObject.getString("adressecli"),jsonObject.getString("currency"),jsonObject.getString("idcompte"))){
-                                                    Toast.makeText(getApplicationContext(),"Donnée sauvegardées avec succès",Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getApplicationContext(),"Donnée sauvegardées avec succès",Toast.LENGTH_LONG).show();
                                                     progressDialog.dismiss();
                                                     Intent main = new Intent(ConfirmationConnexion.this, MainActivity.class);
                                                     startActivity(main);
-                                                    finish();
+                                                    ActivityCompat.finishAffinity(ConfirmationConnexion.this);
                                                 }else{
 
                                                 }
