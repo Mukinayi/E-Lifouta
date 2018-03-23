@@ -32,13 +32,13 @@ public class SplashScreen extends AppCompatActivity {
 
         networkConnection = new NetworkConnection(this);
         final String numcompte = networkConnection.storedDatas("numcompte");
-        final String idcompte = networkConnection.storedDatas("numcompte");
+        final String idcompte = networkConnection.storedDatas("idcompte");
         TelephonyManager tm = (TelephonyManager) getSystemService(Service.TELEPHONY_SERVICE);
         String imei ="";
         final String URL = networkConnection.getUrl();
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-            imei = "00000000000000000";
+            imei = null;
         }else{
             imei = tm.getDeviceId();
         }
@@ -54,12 +54,36 @@ public class SplashScreen extends AppCompatActivity {
                 PostResponseAsyncTask tache = new PostResponseAsyncTask(this, dt, false, new AsyncResponse() {
                     @Override
                     public void processFinish(String s) {
+                        switch (s){
+                            case "180":
+                                Toast.makeText(getApplicationContext(),"Appareil non encore connecté",Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(SplashScreen.this, Login.class);
+                                startActivity(i);
+                                finish();
+                                break;
+                            case "181":
+                                Toast.makeText(getApplicationContext(),"Dispositif désactivé",Toast.LENGTH_SHORT).show();
+                                Intent it = new Intent(SplashScreen.this, NoImei.class);
+                                it.putExtra("message","Dispositif désactivé");
+                                startActivity(it);
+                                finish();
+                                break;
+                            default:
+                                Intent main = new Intent(SplashScreen.this,MainActivity.class);
+                                startActivity(main);
+                                finish();
+                                break;
 
+                        }
                     }
                 });
                 tache.execute(URL+"lifoutacourant/APIS/compare.php");
             }else{
                 Toast.makeText(getApplicationContext(),"Erreur connexion intenet",Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(SplashScreen.this, NoImei.class);
+                it.putExtra("message","Erreur connexion intenet");
+                startActivity(it);
+                finish();
             }
         }else{
             Intent i = new Intent(SplashScreen.this, Login.class);
