@@ -8,5 +8,5 @@ import org.json.JSONObject;
 
 public interface IPayment {
     public JSONObject Payer(String senderaccount, String recipientaccount, double amount, String invoicenumber, String motif, String senderpin);
-    public String ConfirmationTransaction(String otp,String senderaccount,String recipientaccount,String transtype);
+    public JSONObject ConfirmationTransaction(String otp,String senderaccount,String recipientaccount,String transtype);
 }

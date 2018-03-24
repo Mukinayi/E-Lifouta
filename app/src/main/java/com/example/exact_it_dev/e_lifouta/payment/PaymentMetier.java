@@ -135,7 +135,7 @@ public class PaymentMetier implements IPayment {
     }
 
     @Override
-    public String ConfirmationTransaction(String otp, String senderaccount, String recipientaccount, String transtype) {
+    public Boolean ConfirmationTransaction(String otp, String senderaccount, String recipientaccount, String transtype) {
         return null;
     }
 }
