@@ -21,11 +21,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.Login" />
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/app_name"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".splashscreen.NoImei" />
-        <activity android:name=".login.ConfirmationConnexion"></activity>
+        <activity android:name=".login.ConfirmationConnexion" />
+        <activity android:name=".payment.Payment" />
+        <activity android:name=".payment.Confirmation"></activity>
     </application>
 
 </manifest>
