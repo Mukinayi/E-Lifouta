@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Payment extends AppCompatActivity {
     EditText etReciNumcompte,etMontant,etMotif,etPin;
@@ -46,6 +48,7 @@ public class Payment extends AppCompatActivity {
         etReciNumcompte = (EditText)findViewById(R.id.etReciNumcompte);
         etPin = (EditText)findViewById(R.id.etPin);
         btnVal = (Button)findViewById(R.id.btnVal);
+        final Random random = new Random(100);
 
         btnVal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,7 @@ public class Payment extends AppCompatActivity {
                 dt.put("receiveraccount",etReciNumcompte.getText().toString());
                 dt.put("description",etMotif.getText().toString());
                 dt.put("amount",etMontant.getText().toString());
+                dt.put("invoicenumber",String.valueOf(random.nextInt()));
                 dt.put("senderpin",etPin.getText().toString());
                 if(etMontant.getText().toString().isEmpty() || etMotif.getText().toString().isEmpty() || etPin.getText().toString().isEmpty() || etReciNumcompte.getText().toString().isEmpty()){
                     if(progressDialog.isShowing()){progressDialog.dismiss();}
@@ -92,6 +96,7 @@ public class Payment extends AppCompatActivity {
                                             progressDialog.dismiss();
                                             break;
                                         default:
+                                            progressDialog.dismiss();
                                             try {
                                                 JSONArray jsonArray = new JSONArray(s);
                                                 JSONObject jsonObject = jsonArray.getJSONObject(0);
@@ -102,14 +107,14 @@ public class Payment extends AppCompatActivity {
                                                 intent.putExtra("transtype",jsonObject.getString("transtype"));
                                                 startActivity(intent);
                                                 finish();
-
-
                                             }catch (JSONException je){
                                                 networkConnection.writeToast("Erreur de données");
                                                 progressDialog.dismiss();
                                             }
+
                                             break;
                                     }
+                                    Log.i("seth",s);
                                 }
                             });
                             tache.execute(URL+"lifoutacourant/APIS/payer.php");

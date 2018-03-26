@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.exact_it_dev.e_lifouta.payment.Payment;
+import com.example.exact_it_dev.e_lifouta.virement.Virement;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -87,6 +88,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_pay:
                 Intent intentPay = new Intent(getApplicationContext(), Payment.class);
                 startActivity(intentPay);
+                break;
+            case R.id.nav_virement:
+                Intent i = new Intent(MainActivity.this, Virement.class);
+                startActivity(i);
                 break;
         }
 

@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +31,7 @@ public class Virement extends AppCompatActivity {
     EditText etrecipient,etsenderpin,etvirementamount;
     NetworkConnection networkConnection;
     ProgressDialog progressDialog;
-    AlertDialog.Builder builder = new AlertDialog.Builder(Virement.this);
+    AlertDialog.Builder builder;
     AlertDialog alertDialog;
     StringBuilder stringBuilder = new StringBuilder();
     @Override
@@ -55,6 +56,7 @@ public class Virement extends AppCompatActivity {
         etsenderpin = (EditText)findViewById(R.id.etsenderpin);
         etvirementamount = (EditText)findViewById(R.id.etvirementamount);
         btnvirement = (Button)findViewById(R.id.btnvirement);
+        builder = new AlertDialog.Builder(Virement.this);
 
         btnvirement.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +103,7 @@ public class Virement extends AppCompatActivity {
                                             break;
                                         default:
                                             progressDialog.dismiss();
+                                            networkConnection.writeToast("Virement réussi");
                                             try {
                                                 JSONArray jsonArray = new JSONArray(s);
                                                 JSONObject jsonObject = jsonArray.getJSONObject(0);
@@ -108,6 +111,7 @@ public class Virement extends AppCompatActivity {
                                                 stringBuilder.append("Expéditeur : " +jsonObject.getString("senderaccount") +"\n");
                                                 stringBuilder.append("Bénéficiaire : " +jsonObject.getString("recipientaccount") +"\n");
                                                 stringBuilder.append("Montant : " +jsonObject.getString("amount") +" CFA \n");
+                                                stringBuilder.append("Etat : Réussi");
                                                 stringBuilder.append("Réf : " +jsonObject.getString("idtrans") +"\n");
 
                                                 builder.setTitle("Détail de la transaction");
@@ -130,6 +134,7 @@ public class Virement extends AppCompatActivity {
                                             }
                                             break;
                                     }
+                                    Log.i("seth",s);
                                 }
                             });
                             tache.execute(URL+"lifoutacourant/APIS/virement.php");
