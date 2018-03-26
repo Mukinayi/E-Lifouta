@@ -23,4 +23,5 @@
     <string name="labelfinish">Valider</string>
     <string name="confirmationpayment">Confirmation Paiement</string>
     <string name="opt">OTP</string>
+    <string name="virement">Virement</string>
 </resources>

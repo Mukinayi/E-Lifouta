@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.exact_it_dev.e_lifouta.virement.Virement"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="#7fc6e2"
+                android:textSize="28sp"
+                android:text="@string/virement"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/recipient"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etrecipient"
+                android:background="@drawable/input"
+                android:hint="@string/recipient"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/montant"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etvirementamount"
+                android:background="@drawable/input"
+                android:hint="@string/montant"
+                android:layout_marginBottom="8dp"
+                android:inputType="numberDecimal"
+                android:textColor="#fff"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/lifpin"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etsenderpin"
+                android:background="@drawable/input"
+                android:hint="@string/pinclient"
+                android:layout_marginBottom="8dp"
+                android:inputType="numberPassword"
+                android:textColor="#fff"/>
+
+            <Button
+                android:id="@+id/btnvirement"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/labelfinish"
+                android:textColor="@color/colorPrimary"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

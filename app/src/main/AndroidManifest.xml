@@ -28,7 +28,8 @@
         <activity android:name=".splashscreen.NoImei" />
         <activity android:name=".login.ConfirmationConnexion" />
         <activity android:name=".payment.Payment" />
-        <activity android:name=".payment.Confirmation"></activity>
+        <activity android:name=".payment.Confirmation" />
+        <activity android:name=".virement.Virement"></activity>
     </application>
 
 </manifest>
