@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.exact_it_dev.e_lifouta.payment.Confirmation">
+    tools:context="com.example.exact_it_dev.e_lifouta.payment.Confirmation"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/colorPrimaryDark">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="#7fc6e2"
+                android:textSize="28sp"
+                android:text="@string/confirmationpayment"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/opt"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etOTPconf"
+                android:background="@drawable/input"
+                android:hint="@string/opt"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                android:textColor="#fff"/>
+
+
+            <Button
+                android:id="@+id/btnOTPconf"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/labelfinish"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:text="@string/nosms"
+                android:layout_marginBottom="10dp"/>
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/imgbtnresendotp"
+                android:background="@drawable/resend"
+                android:layout_gravity="center_horizontal"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

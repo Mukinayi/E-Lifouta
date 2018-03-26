@@ -12,6 +12,8 @@ import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
+import com.example.exact_it_dev.e_lifouta.R;
+
 import java.net.URL;
 
 /**
@@ -109,6 +111,10 @@ public class NetworkConnection {
             }
         }
         return devicename;
+    }
+
+    public void writeToast(String string){
+        Toast.makeText(context, string,Toast.LENGTH_SHORT).show();
     }
 
 }
