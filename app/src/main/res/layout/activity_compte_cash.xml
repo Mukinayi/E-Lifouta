@@ -96,7 +96,7 @@
                 android:background="@drawable/input"
                 android:hint="@string/montant"
                 android:layout_marginBottom="8dp"
-                android:inputType="textPersonName"
+                android:inputType="numberDecimal"
                 android:textColor="#fff"/>
 
 
