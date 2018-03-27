@@ -102,7 +102,47 @@ public class Confirmation extends AppCompatActivity {
             }
         });
 
-
+        imgbtnresendotp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMap dt = new HashMap();
+                dt.put("senderaccount",senderaccount);
+                dt.put("optclient",optclient);
+                dt.put("transtype",transtype);
+                progressDialog.setTitle("Renvoi OTP");
+                progressDialog.show();
+                if(networkConnection.isConnected()){
+                    try {
+                        PostResponseAsyncTask resend = new PostResponseAsyncTask(Confirmation.this, dt, false, new AsyncResponse() {
+                            @Override
+                            public void processFinish(String s) {
+                                switch (s){
+                                    case "180":
+                                        progressDialog.dismiss();
+                                        networkConnection.writeToast("Aucun OTP disponible");
+                                        break;
+                                    case "201":
+                                        progressDialog.dismiss();
+                                        networkConnection.writeToast("Echec renvoi OTP");
+                                        break;
+                                    default:
+                                        progressDialog.dismiss();
+                                        networkConnection.writeToast("OTP renvoyé avec succès");
+                                        break;
+                                }
+                            }
+                        });
+                        resend.execute(URL+"lifoutacourant/APIS/resendsms.php");
+                    }catch (Exception e){
+                        progressDialog.dismiss();
+                        networkConnection.writeToast("Erreur connexion au serveur");
+                    }
+                }else{
+                    progressDialog.dismiss();
+                    networkConnection.writeToast("Erreur connexion internet");
+                }
+            }
+        });
 
 
     }

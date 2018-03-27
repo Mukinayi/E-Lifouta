@@ -134,7 +134,6 @@ public class Virement extends AppCompatActivity {
                                             }
                                             break;
                                     }
-                                    Log.i("seth",s);
                                 }
                             });
                             tache.execute(URL+"lifoutacourant/APIS/virement.php");
