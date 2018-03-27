@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.exact_it_dev.e_lifouta.transfert.CompteCash"
+    android:background="@color/colorPrimaryDark"
+    android:padding="8dp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="#7fc6e2"
+                android:textSize="28sp"
+                android:text="@string/comptecash"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/recifname"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etrecifname"
+                android:background="@drawable/input"
+                android:hint="@string/recifname"
+                android:layout_marginBottom="8dp"
+                android:inputType="textPersonName"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/recilname"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etrecilname"
+                android:background="@drawable/input"
+                android:hint="@string/recilname"
+                android:layout_marginBottom="8dp"
+                android:inputType="textPersonName"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/reciphone"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etreciphone"
+                android:background="@drawable/input"
+                android:hint="@string/reciphone"
+                android:layout_marginBottom="8dp"
+                android:inputType="phone"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/montant"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etreciamount"
+                android:background="@drawable/input"
+                android:hint="@string/montant"
+                android:layout_marginBottom="8dp"
+                android:inputType="textPersonName"
+                android:textColor="#fff"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#7fc6e2"
+                android:text="@string/lifpin"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:layout_height="45dp"
+                android:layout_width="match_parent"
+                android:id="@+id/etsendpin"
+                android:background="@drawable/input"
+                android:hint="@string/pinclient"
+                android:layout_marginBottom="8dp"
+                android:inputType="numberPassword"
+                android:textColor="#fff"/>
+
+            <Button
+                android:id="@+id/btntransfert"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/labelfinish"
+                android:textColor="@color/colorPrimary"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

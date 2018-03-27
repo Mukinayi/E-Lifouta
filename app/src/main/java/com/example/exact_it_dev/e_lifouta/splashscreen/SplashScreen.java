@@ -40,11 +40,14 @@ public class SplashScreen extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             imei = null;
         }else{
-            imei = tm.getDeviceId();
+            if(tm.getDeviceId()!=null){
+                imei = tm.getDeviceId();
+            }else{
+                Intent noi = new Intent(SplashScreen.this,NoImei.class);
+                noi.putExtra("message","Dispositif sans IMEI");
+                startActivity(noi);
+            }
         }
-
-
-
 
         HashMap dt = new HashMap();
         dt.put("deviceimei",imei);

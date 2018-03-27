@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.exact_it_dev.e_lifouta.payment.Payment;
+import com.example.exact_it_dev.e_lifouta.transfert.CompteCash;
 import com.example.exact_it_dev.e_lifouta.virement.Virement;
 
 public class MainActivity extends AppCompatActivity
@@ -93,9 +94,11 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, Virement.class);
                 startActivity(i);
                 break;
+            case R.id.nav_transfer:
+                Intent tra = new Intent(MainActivity.this, CompteCash.class);
+                startActivity(tra);
+                break;
         }
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

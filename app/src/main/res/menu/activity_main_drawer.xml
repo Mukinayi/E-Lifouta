@@ -11,7 +11,7 @@
                     android:icon="@drawable/virement"
                     android:title="Virement" />
                 <item
-                    android:id="@+id/transfer"
+                    android:id="@+id/nav_transfer"
                     android:icon="@drawable/transfer"
                     android:title="transfer" />
                 <item

@@ -111,6 +111,7 @@ public class Virement extends AppCompatActivity {
                                                 stringBuilder.append("Expéditeur : " +jsonObject.getString("senderaccount") +"\n");
                                                 stringBuilder.append("Bénéficiaire : " +jsonObject.getString("recipientaccount") +"\n");
                                                 stringBuilder.append("Montant : " +jsonObject.getString("amount") +" CFA \n");
+                                                stringBuilder.append("Frais : " +jsonObject.getString("systemfees") +"\n");
                                                 stringBuilder.append("Etat : Réussi");
                                                 stringBuilder.append("Réf : " +jsonObject.getString("idtrans") +"\n");
 

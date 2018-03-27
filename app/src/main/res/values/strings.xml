@@ -24,4 +24,8 @@
     <string name="confirmationpayment">Confirmation Paiement</string>
     <string name="opt">OTP</string>
     <string name="virement">Virement</string>
+    <string name="comptecash">Transfert Compte à Cash</string>
+    <string name="recifname">Prénom bénéficiaire</string>
+    <string name="recilname">Nom bénéficiaire</string>
+    <string name="reciphone">Portable bénéficiaire</string>
 </resources>

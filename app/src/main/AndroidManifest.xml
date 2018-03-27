@@ -29,7 +29,8 @@
         <activity android:name=".login.ConfirmationConnexion" />
         <activity android:name=".payment.Payment" />
         <activity android:name=".payment.Confirmation" />
-        <activity android:name=".virement.Virement"></activity>
+        <activity android:name=".virement.Virement" />
+        <activity android:name=".transfert.CompteCash"></activity>
     </application>
 
 </manifest>
