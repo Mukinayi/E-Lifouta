@@ -23,6 +23,7 @@ import com.example.exact_it_dev.e_lifouta.transfert.CompteCash;
 import com.example.exact_it_dev.e_lifouta.virement.Virement;
 import com.kosalgeek.genasync12.AsyncResponse;
 import com.kosalgeek.genasync12.PostResponseAsyncTask;
+import com.pushbots.push.Pushbots;
 
 import java.util.HashMap;
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Pushbots.sharedInstance().registerForRemoteNotifications();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +131,7 @@ public class MainActivity extends AppCompatActivity
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Récupération du solde");
         progressDialog.show();
+
         HashMap dt = new HashMap();
         dt.put("moncompte",numcompte);
         if(networkConnection.isConnected()){

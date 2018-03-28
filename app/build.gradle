@@ -4,11 +4,19 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.exact_it_dev.e_lifouta"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+
+                manifestApplicationId         : "${applicationId}",
+                pushbots_app_id               : "5abad5cc1db2dc58a069d695",
+                pushbots_loglevel             : "DEBUG",
+                google_sender_id              : "717738339431"
+
+        ]
     }
     buildTypes {
         release {
@@ -28,4 +36,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.jaredrummler:android-device-names:1.1.6'
     implementation files('libs/GenAsync.1.2.jar')
+    compile 'com.google.android.gms:play-services-gcm:10.2.1'
+    compile 'com.pushbots:pushbots-lib:3.0.3@aar'
 }
